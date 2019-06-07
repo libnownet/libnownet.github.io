@@ -4,6 +4,7 @@
 *.so
 
 # Folders
+_gen
 _obj
 _test
 
