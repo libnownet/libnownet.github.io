@@ -1,0 +1,170 @@
+{
+  "performance_tests": [
+    {
+      "name": "TCP to TCP Test",
+      "description": "TCP to TCP: A simple raw throughput performance test.",
+      "metrics": [
+        {
+          "name": "Time",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": "2.6s",
+              "value": 2.6
+            },
+            {
+              "name": "Filebeat",
+              "label": "3.2s",
+              "value": 3.2
+            },
+            {
+              "name": "Fluentbit",
+              "label": "3.2s",
+              "value": 3.2
+            },
+            {
+              "name": "FluentD",
+              "label": "6.2s",
+              "value": 6.2
+            },
+            {
+              "name": "Logstash",
+              "label": "7.4s",
+              "value": 7.4
+            },
+            {
+              "name": "Splunk HF",
+              "label": "8.3s",
+              "value": 8.3
+            },
+            {
+              "name": "Splunk UF",
+              "label": "8.3s",
+              "value": 8.3
+            }
+          ]
+        },
+        {
+          "name": "CPU",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": 48,
+              "value": 48
+            },
+            {
+              "name": "Fluentbit",
+              "label": 62,
+              "value": 62
+            },
+            {
+              "name": "FluentD",
+              "label": 63,
+              "value": 63
+            },
+            {
+              "name": "Elastic's Logstash",
+              "label": 64,
+              "value": 64
+            },
+            {
+              "name": "Splunk Univ Fwd",
+              "label": 72,
+              "value": 72
+            },
+            {
+              "name": "Sumo Collector",
+              "label": 75,
+              "value": 75
+            },
+            {
+              "name": "Datadog Agent",
+              "label": 80,
+              "value": 80
+            }
+          ]
+        },
+        {
+          "name": "Mem",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": "590mb/s",
+              "value": 590
+            },
+            {
+              "name": "Fluentbit",
+              "label": "656mb/s",
+              "value": 656
+            },
+            {
+              "name": "FluentD",
+              "label": "985mb/s",
+              "value": 985
+            },
+            {
+              "name": "Elastic's Logstash",
+              "label": "1024mb/s",
+              "value": 1024
+            },
+            {
+              "name": "Splunk Univ Fwd",
+              "label": "1422mb/s",
+              "value": 1422
+            },
+            {
+              "name": "Sumo Collector",
+              "label": "1565mb/s",
+              "value": 1565
+            },
+            {
+              "name": "Datadog Agent",
+              "label": "1600mb/s",
+              "value": 1600
+            }
+          ]
+        },
+        {
+          "name": "IO",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": 420,
+              "value": 420
+            },
+            {
+              "name": "Fluentbit",
+              "label": 512,
+              "value": 512
+            },
+            {
+              "name": "FluentD",
+              "label": 685,
+              "value": 685
+            },
+            {
+              "name": "Elastic's Logstash",
+              "label": 788,
+              "value": 788
+            },
+            {
+              "name": "Splunk Univ Fwd",
+              "label": 895,
+              "value": 895
+            },
+            {
+              "name": "Sumo Collector",
+              "label": 995,
+              "value": 995
+            },
+            {
+              "name": "Datadog Agent",
+              "label": 996,
+              "value": 996
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

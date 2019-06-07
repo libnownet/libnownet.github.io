@@ -1,0 +1,95 @@
+<section class="footer pb-7 pt-3">
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-12 col-lg-5 col-xl-4 pr-3 pr-lg-5 pb-5 pb-lg-0">
+                <img alt="Vector by Timber.io" class="footer__logo mb-4" src="/images/logo-dark.png">
+                <div class="footer__subscription pb-4">
+                    <form action="{{ $.Site.Params.subscribeActionURL }}" method="post">
+                        <input class="form-control mr-2" name="email" placeholder="email" type="email">
+                        <button class="btn btn--darkblue" type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <a href="{{ $.Site.Params.repoURL }}"><img alt="View on GitHub" class="footer__social mr-2"
+                                 src="/images/github-icon.png"></a>
+                <a href="#"><img alt="Discuss on Slack" class="footer__social" src="/images/slack-icon.png"></a>
+            </div>
+            <div class="col-12 col-sm-6 col-md text-center text-md-left">
+                <h6 class="footer__menu__label">About</h6>
+                <ul class="footer__menu">
+                    <li>
+                        <a href="{{ $.Site.Params.usecasesURL }}">Use Cases</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.performanceURL }}">Performance</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.correctnessURL }}">Correctness</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.conceptsURL }}">Concepts</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md text-center text-md-left">
+                <h6 class="footer__menu__label">Docs</h6>
+                <ul class="footer__menu">
+                    <li>
+                        <a href="{{ $.Site.Params.getStartedURL }}">Getting Started</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.installURL }}">Install</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.deploymentURL }}">Deployment</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.configurationURL }}">Configuration</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.administrationURL }}">Administration</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.guidesURL }}">Guides</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md text-center text-md-left">
+                <h6 class="footer__menu__label">Configure</h6>
+                <ul class="footer__menu">
+                    <li>
+                        <a href="{{ $.Site.Params.sourcesURL }}">Sources</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.transformsURL }}">Transforms</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.sinksURL }}">Sinks</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md text-center text-md-left">
+                <h6 class="footer__menu__label">Open Source</h6>
+                <ul class="footer__menu">
+                    <li>
+                        <a href="{{ $.Site.Params.repoURL }}">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.downloadURL }}">Download</a>
+                    </li>
+                    <li>
+                        <a href="{{ $.Site.Params.roadmapURL }}">Roadmap</a>
+                    </li>
+                    <li>
+                        <a href="#">Community</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <h6>Developed with <img alt="Heart" class="credit__icon" src="/images/heart-icon.jpg"> by <a
+                        class="credit__link" href="https://timber.io" target="_blank">Timber.io</a></h6>
+            </div>
+        </div>
+    </div>
+</section>

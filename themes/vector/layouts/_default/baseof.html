@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+    {{- partial "head.html" . -}}
+    <body>
+        <!-- Top Bar -->
+        <a class="topbar" href="{{ $.Site.Params.betaURL }}">
+            Join our beta program and help shape Vector's future!
+        </a>
+        
+        {{- block "header" . }}{{- partial "header.html" . -}}{{- end }}
+        {{- block "main" . }}{{- end }}
+        {{- partial "footer.html" . -}}
+    </body>
+</html>
