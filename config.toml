@@ -1,4 +1,4 @@
-baseURL = "http://vectorproject.io/"
+baseURL = "https://vectorproject.io/"
 languageCode = "en-us"
 title = "Vector: A High-Performance Logs, Events, & Metrics Router"
 theme = "vector"
