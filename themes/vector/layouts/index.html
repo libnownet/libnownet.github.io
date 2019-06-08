@@ -3,8 +3,7 @@
     <div class="row pt-5">
         <div class="col text-center">
             <h2 class="hero__tag_line headline pb-2">Vector Makes Observability Data Simple</h2>
-            <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for
-                collecting, transforming, and routing log and metrics data with ease.</h5>
+            <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for collecting, transforming, and routing log, metrics, and events with ease.</h5>
             <a class="btn btn--primary btn--rounded mb-3 mb-sm-0 mr-0 mr-sm-3" href="{{ $.Site.Params.getStartedURL }}">Get Started</a>
             <a class="btn btn--outline btn--rounded mb-3 mb-sm-0" href="{{ $.Site.Params.downloadURL }}">Download v0.1.0</a>
         </div>
@@ -64,7 +63,7 @@
                             <img alt="Blistering Fast" src="/images/feature-fast.png">
                         </div>
                         <h4 class="featurecard__title pb-2">Blistering Fast</h4>
-                        <p class="featurecard__copy">Built in Rust, Vector is <a href="{{ $.Site.Params.performanceURL }}">fast, lean, and efficient</a>. It's
+                        <p class="featurecard__copy">Built in <a href="https://www.rust-lang.org/" target="_blank">Rust</a>, Vector is <a href="{{ $.Site.Params.performanceURL }}">blistering fast and memory efficient</a>. It's
                             designed to handle the most demanding environments.</p>
                     </div>
                 </div>
@@ -74,9 +73,8 @@
                         <div class="featurecard__icon pb-3">
                             <img alt="Easy To Operate" src="/images/feature-ease.png">
                         </div>
-                        <h4 class="featurecard__title pb-2">Vendor Agnostic</h4>
-                        <p class="featurecard__copy">Vector is vendor agnostic, unbiased, and obosessed with helping you get
-                            the most of your data. Regardless of the tool.</p>
+                        <h4 class="featurecard__title pb-2">Easy Deploys</h4>
+                        <p class="featurecard__copy">Vector compiles to a single static binary with no runtime. Making it easy to deploy and manage.</p>
                     </div>
                 </div>
 
@@ -96,8 +94,8 @@
                         <div class="featurecard__icon pb-3">
                             <img alt="Logs or Metrics" src="/images/feature-logs.png">
                         </div>
-                        <h4 class="featurecard__title pb-2">Logs or Metrics</h4>
-                        <p class="featurecard__copy">Vector unifies logs and metrics, seamlessly <a href="{{ $.Site.Params.logsToMetricsURL }}">converting logs to metrics</a>.
+                        <h4 class="featurecard__title pb-2">Logs, Metrics, & Events</h4>
+                        <p class="featurecard__copy">Vector unifies logs, metrics, and events, making it easy to <a href="{{ $.Site.Params.logsToMetricsURL }}">convert logs to metrics</a>.
                             No need for 2 separate tools.</p>
                     </div>
                 </div>
@@ -354,7 +352,7 @@
             <!-- Section Title-->
             <div class="row">
                 <div class="col">
-                    <h1 class="section__title pb-4">Configuration Without The Confusion</h1>
+                    <h1 class="section__title pb-4">Simple To Configure</h1>
                 </div>
             </div>
 
@@ -657,7 +655,9 @@
             </div>
         </div>
     </section>
+{{ end }}
 
+{{ define "scripts" }}
     <!-- Custom Front-End Logic -->
     <script type="text/javascript">
 
