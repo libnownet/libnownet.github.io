@@ -1,0 +1,52 @@
+{{ define "hero" }}
+    <!-- Headline & Tagline -->
+    <div class="row pt-5">
+        <div class="col text-center">
+            <h2 class="hero__tag_line headline pb-2">Explore Our Community</h2>
+            <h5 class="tagline pb-3">Get support, suggest features, and connect with others.</h5>
+        </div>
+    </div>
+{{ end }}
+
+{{ define "main" }}
+    <section class="community_resources background--light pt-3 pb-6">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-4 mb-4">
+                    <a class="resource_box" href="{{ $.Site.Params.forumURL }}">
+                        <div><img alt="Forum" class="center_image" src="/images/forum.svg"></div>
+                        <h4>Forum</h4>
+                        <div class="description">The best place to get high quality help</div>
+                    </a>
+                </div>
+                <div class="col-4 mb-4">
+                    <a class="resource_box" href="{{ $.Site.Params.chatURL }}">
+                        <div><img alt="Chat" class="center_image" src="/images/chat.svg"></div>
+                        <h4>Chat</h4>
+                        <div class="description">Real-time discussions</div>
+                    </a>
+                </div>
+                <div class="col-4 mb-4">
+                    <a class="resource_box" href="{{ $.Site.Params.issuesURL }}">
+                        <div><img alt="Github" class="center_image" src="/images/github.svg"></div>
+                        <h4>Github</h4>
+                        <div class="description">Feature requests &amp; bug reports</div>
+                    </a>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6 mb-4">
+                    <a class="resource_box sub" href="{{ $.Site.Params.docsURL }}">
+                        <h4>Docs</h4>
+                    </a>
+                </div>
+                <div class="col-6 mb-4">
+                    <a class="resource_box" href="{{ $.Site.Params.guidesURL }}">
+                        <h4>Guides</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{{ end }}

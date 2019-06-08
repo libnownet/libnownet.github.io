@@ -1,76 +1,46 @@
-{{ define "header" }}
-    <section class="hero pt-5 pb-5">
-        <div class="container">
-
-            <div class="row align-items-center">
-                <!-- Logo-->
-                <div class="col">
-                    <a href="/"><img alt="Vector by Timber.io" class="hero__logo" src="/images/logo.png"></a>
-                </div>
-                <div class="col text-right d-block d-lg-none"><a class="heronav__hamburger pr-2" href="#"><i
-                        class="fas fa-bars"></i></a></div>
-                <!-- Navigation-->
-                <div class="col-12 col-lg-9 text-right">
-                    <nav class="heronav text-left text-lg-right">
-                        <a class="heronav__item" href="{{ $.Site.Params.usecasesURL }}">Use Cases</a>
-                        <a class="heronav__item" href="{{ $.Site.Params.comparisonsURL }}">Vs Others</a>
-                        <a class="heronav__item" href="{{ $.Site.Params.docsURL }}">Docs</a>
-                        <a class="heronav__item" href="#">Blog</a>
-                        <a class="heronav__item" href="#">Community</a>
-                        <a class="heronav__item mr-3" href="{{ $.Site.Params.downloadURL }}">Download</a>
-                        <a class="heronav__item item--github mt-3 mt-lg-0" href="{{ $.Site.Params.repoURL }}"><img alt="View on GitHub"
-                                                                                         src="/images/github-icon.png"> View on
-                            GitHub</a>
-                    </nav>
-
-                </div>
-            </div>
-
-            <!-- Headline & Tagline -->
-            <div class="row pt-5">
-                <div class="col text-center">
-                    <h2 class="hero__tag_line headline pb-2">Vector Makes Observability Data Simple</h2>
-                    <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for
-                        collecting, transforming, and routing log and metrics data with ease.</h5>
-                    <a class="btn btn--primary btn--rounded mb-3 mb-sm-0 mr-0 mr-sm-3" href="{{ $.Site.Params.getStartedURL }}">Get Started</a>
-                    <a class="btn btn--outline btn--rounded mb-3 mb-sm-0" href="{{ $.Site.Params.downloadURL }}">Download v0.1.0</a>
-                </div>
-            </div>
-
-            <!-- Illustration -->
-            <div class="row">
-                <div class="col-12 mb-3 text-center hero__illustration__container">
-                    <!-- Sources -->
-                    <a href="#"><img alt="Source 1" class="hero__icon source--1" data-fadetype="source"
-                                     src="/images/source-file.png"></a>
-                    <a href="#"><img alt="Source 2" class="hero__icon source--2" data-fadetype="source"
-                                     src="/images/source-syslog.png"></a>
-                    <a href="#"><img alt="Source 3" class="hero__icon source--3" data-fadetype="source"
-                                     src="/images/source-statsd.png"></a>
-                    <!-- Sinks -->
-                    <a href="#"><img alt="Sink 1" class="hero__icon sink--1" data-fadetype="sink"
-                                     data-sink-type="logs" src="/images/sink-s3.png"></a>
-                    <a href="#"><img alt="Sink 2" class="hero__icon sink--2" data-fadetype="sink"
-                                     data-sink-type="logs" src="/images/sink-elasticsearch.png"></a>
-                    <a href="#"><img alt="Sink 3" class="hero__icon sink--3" data-fadetype="sink"
-                                     data-sink-type="metrics" src="/images/sink-prometheus.png"></a>
-                    <!-- Background Illustration-->
-                    <img alt="Sources, Transforms and Sinks" class="hero__illustration"
-                         src="/images/hero-background.svg">
-                </div>
-                <div class="col-4 text-center pl-7">
-                    <h4 class="hero__link"><a href="{{ $.Site.Params.sourcesURL }}">1. Take data from anywhere</a></h4>
-                </div>
-                <div class="col-4 text-center">
-                    <h4 class="hero__link"><a href="{{ $.Site.Params.transformsURL }}">2. Structure & transform it</a></h4>
-                </div>
-                <div class="col-4 text-center pr-7">
-                    <h4 class="hero__link"><a href="{{ $.Site.Params.sinksURL }}">3. Send it to many destinations</a></h4>
-                </div>
-            </div>
-
+{{ define "hero" }}
+    <!-- Headline & Tagline -->
+    <div class="row pt-5">
+        <div class="col text-center">
+            <h2 class="hero__tag_line headline pb-2">Vector Makes Observability Data Simple</h2>
+            <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for
+                collecting, transforming, and routing log and metrics data with ease.</h5>
+            <a class="btn btn--primary btn--rounded mb-3 mb-sm-0 mr-0 mr-sm-3" href="{{ $.Site.Params.getStartedURL }}">Get Started</a>
+            <a class="btn btn--outline btn--rounded mb-3 mb-sm-0" href="{{ $.Site.Params.downloadURL }}">Download v0.1.0</a>
         </div>
-    </section>
+    </div>
+
+    <!-- Illustration -->
+    <div class="row">
+        <div class="col-12 mb-3 text-center hero__illustration__container">
+            <!-- Sources -->
+            <a href="#"><img alt="Source 1" class="hero__icon source--1" data-fadetype="source"
+                             src="/images/source-file.png"></a>
+            <a href="#"><img alt="Source 2" class="hero__icon source--2" data-fadetype="source"
+                             src="/images/source-syslog.png"></a>
+            <a href="#"><img alt="Source 3" class="hero__icon source--3" data-fadetype="source"
+                             src="/images/source-statsd.png"></a>
+            <!-- Sinks -->
+            <a href="#"><img alt="Sink 1" class="hero__icon sink--1" data-fadetype="sink"
+                             data-sink-type="logs" src="/images/sink-s3.png"></a>
+            <a href="#"><img alt="Sink 2" class="hero__icon sink--2" data-fadetype="sink"
+                             data-sink-type="logs" src="/images/sink-elasticsearch.png"></a>
+            <a href="#"><img alt="Sink 3" class="hero__icon sink--3" data-fadetype="sink"
+                             data-sink-type="metrics" src="/images/sink-prometheus.png"></a>
+            <!-- Background Illustration-->
+            <img alt="Sources, Transforms and Sinks" class="hero__illustration"
+                 src="/images/hero-background.svg">
+        </div>
+        <div class="col-4 text-center pl-7">
+            <h4 class="hero__link"><a href="{{ $.Site.Params.sourcesURL }}">1. Take data from anywhere</a></h4>
+        </div>
+        <div class="col-4 text-center">
+            <h4 class="hero__link"><a href="{{ $.Site.Params.transformsURL }}">2. Structure & transform it</a></h4>
+        </div>
+        <div class="col-4 text-center pr-7">
+            <h4 class="hero__link"><a href="{{ $.Site.Params.sinksURL }}">3. Send it to many destinations</a></h4>
+        </div>
+    </div>
 {{ end }}
 
 {{ define "main" }}
@@ -237,82 +207,84 @@
             </div>
 
             <div class="row">
-                <table class="correctness__results">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Vector</th>
-                            <th>Filebeat</th>
-                            <th>FluentBit</th>
-                            <th>FluentD</th>
-                            <th>Logstash</th>
-                            <th>SplunkHF</th>
-                            <th>SplunkUF</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="#">Buffer persistence</a></td>
-                            <td class="passed">✔</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">File rotation</a></td>
-                            <td class="passed">✔</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">File truncation</a></td>
-                            <td class="passed">✔</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">Nested JSON</a></td>
-                            <td class="passed">✔</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">SIGHUP</a></td>
-                            <td class="passed">✔</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="warning">⚠</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">TCP Streaming</a></td>
-                            <td class="passed">✔</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                            <td class="failed">𝘅</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="correctness__results">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Vector</th>
+                                <th>Filebeat</th>
+                                <th>FluentBit</th>
+                                <th>FluentD</th>
+                                <th>Logstash</th>
+                                <th>SplunkHF</th>
+                                <th>SplunkUF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">Buffer persistence</a></td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">File rotation</a></td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">File truncation</a></td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Nested JSON</a></td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">SIGHUP</a></td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="warning">⚠</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">TCP Streaming</a></td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="row mt-5">
@@ -686,22 +658,6 @@
         </div>
     </section>
 
-    <!-- jQuery, Popper, Bootstrap -->
-    <script crossorigin="anonymous"
-            src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Vue.js (Performance Chart) -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-    <!-- ScrollReveal -->
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
     <!-- Custom Front-End Logic -->
     <script type="text/javascript">
 
@@ -772,12 +728,32 @@
             // Hero
             //
 
-            window.hero_source_array = ["file", "syslog", "statsd", "stdin", "tcp"];
-            window.hero_logs_sink_array = ["s3", "elasticsearch", "splunk-hec", "cw-logs", "http", "kafka", "tcp"];
-            window.hero_metrics_sink_array = ["elasticsearch", "prometheus", "splunk-hec"];
+            window.hero_source_array = [
+                {name: "file", url: "{{ $.Site.Params.fileSourceURL }}"},
+                {name: "syslog", url: "{{ $.Site.Params.syslogSourceURL }}"},
+                {name: "statsd", url: "{{ $.Site.Params.statsdSourceURL }}"},
+                {name: "stdin", url: "{{ $.Site.Params.stdinSourceURL }}"},
+                {name: "tcp", url: "{{ $.Site.Params.tcpSourceURL }}"}
+            ];
+            window.hero_logs_sink_array = [
+                {name: "s3", url: "{{ $.Site.Params.s3SinkURL }}"},
+                {name: "elasticsearch", url: "{{ $.Site.Params.elasticsearchSinkURL }}"},
+                {name: "splunk-hec", url: "{{ $.Site.Params.splunkHECSinkURL }}"}, 
+                {name: "cw-logs", url: "{{ $.Site.Params.cwLogsSinkURL }}"},
+                {name: "http", url: "{{ $.Site.Params.httpSinkURL }}"},
+                {name: "kafka", url: "{{ $.Site.Params.kafkaSinkURL }}"},
+                {name: "tcp", url: "{{ $.Site.Params.tcpSinkURL }}"}
+            ];
+            window.hero_metrics_sink_array = [
+                {name: "elasticsearch", url: "{{ $.Site.Params.elasticsearchSinkURL }}"},
+                {name: "prometheus", url: "{{ $.Site.Params.prometheusSinkURL }}"},
+                {name: "splunk-hec", url: "{{ $.Site.Params.splunkHECSinkURL }}"}
+            ];
 
             $("[data-fadetype=\"source\"]").each(function (i, obj) {
-                $(obj).attr("src", "/images/source-" + hero_source_array[i] + ".png");
+                let source = hero_source_array[i];
+                $(obj).parent().attr("href", source.url);
+                $(obj).attr("src", "/images/source-" + source.name + ".png");
                 $(obj).attr("data-fadeindex", i);
             });
 
@@ -788,7 +764,10 @@
                         i = 0;
                     }
                     $(obj).delay(400 * index).fadeOut("slow", function () {
-                        $(obj).attr("src", "/images/source-" + hero_source_array[i] + ".png");
+                        let source = hero_source_array[i];
+                        console.log(source)
+                        $(obj).parent().attr("href", source.url);
+                        $(obj).attr("src", "/images/source-" + source.name + ".png");
                         $(obj).attr("data-fadeindex", i);
                         $(obj).fadeIn();
                     });
@@ -798,12 +777,16 @@
             setInterval(window.animateSources, 5000);
 
             $("[data-sink-type=\"logs\"]").each(function (i, obj) {
-                $(obj).attr("src", "/images/sink-" + hero_logs_sink_array[i] + ".png");
+                let sink = hero_logs_sink_array[i];
+                $(obj).parent().attr("href", sink.url);
+                $(obj).attr("src", "/images/sink-" + sink.name + ".png");
                 $(obj).attr("data-fadeindex", i);
             });
 
             $("[data-sink-type=\"metrics\"]").each(function (i, obj) {
-                $(obj).attr("src", "/images/sink-" + hero_metrics_sink_array[i] + ".png");
+                let sink = hero_metrics_sink_array[i];
+                $(obj).parent().attr("href", sink.url);
+                $(obj).attr("src", "/images/sink-" + sink.name + ".png");
                 $(obj).attr("data-fadeindex", i);
             });
 
@@ -818,7 +801,9 @@
                         i = 0;
                     }
                     $(obj).delay(1200 + (400 * index)).fadeOut("slow", function () {
-                        $(obj).attr("src", "/images/sink-" + sinks_array[i] + ".png");
+                        let sink = sinks_array[i];
+                        $(obj).parent().attr("href", sink.url);
+                        $(obj).attr("src", "/images/sink-" + sink.name + ".png");
                         $(obj).attr("data-fadeindex", i);
                         $(obj).fadeIn();
                     });
