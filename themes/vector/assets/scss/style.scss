@@ -380,7 +380,6 @@ p{
 /* Feature Cards */
 
 .featurecard{
-  max-width: 380px;
   margin:0 auto;
   .featurecard__icon{
     text-align:center;
@@ -434,18 +433,16 @@ p{
 
 .performance_tests{
   .performance_testbar{
-    padding:14px 20px;
-    color:white;
+    color: white;
     background: -webkit-linear-gradient(left, #CB58EB 0%, #1AE7FF 100%);
     background: -webkit-gradient(linear, left top, right top, from(#CB58EB), to(#1AE7FF));
     background: -o-linear-gradient(left, #CB58EB 0%, #1AE7FF 100%);
     background: linear-gradient(90deg, #CB58EB 0%, #1AE7FF 100%);
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-border-radius:10px;
-    border-radius:10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
   }
   .performance_testbar__select{
     color: rgba(255, 255, 255, 0.9);
@@ -460,7 +457,7 @@ p{
     position: absolute;
     top: 0;
     left: 0;
-    padding: 5px 20px;
+    padding: 5px 20px 5px 0;
     background-color: white;
     margin-top: -10px;
     -webkit-border-radius: 10px;
@@ -492,19 +489,19 @@ p{
     cursor:default;
   }
   .performance_test__bar__element{
-    background-color:#001B3D;
+    background-color: #001B3D;
     width: 0%;
-    height:35px;
-    -webkit-border-radius:2px;
-    border-radius:2px;
-    display:inline-block;
+    height: 35px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
   }
   .performance_test__bar__value{
     display: inline-block;
     padding-left: 5px;
     bottom: 5px;
     position: relative;
-    cursor:default;
+    cursor: default;
   }
   .performance_test__bar--active{
     .performance_test__bar__element {
@@ -603,8 +600,9 @@ p{
 .topologies{
   .carousel-item {
     img {
-      max-width:80%;
+      max-width:90%;
       max-height: 300px;
+      min-height: 200px;
       margin: 0 auto;
     }
   }
@@ -990,6 +988,33 @@ p{
 
 /*Responsive Classes */
 
+/* Large or Lower */
+@media (max-width: 992px) {
+  .heronav{
+    display:none;
+    &.open--nav{
+      display:block;
+      padding-top:20px;
+      .heronav__item{
+        display: block;
+        text-align: left;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+/* Medium or Lower */
+@media (max-width: 768px) {
+  .hero__link{
+    line-height:1.2;
+    a {
+      font-weight: normal !important;
+      font-size: 18px !important;
+    }
+  }
+}
+
 /* Small or Lower */
 @media (max-width: 576px) {
   .hero__illustration__title{
@@ -998,7 +1023,8 @@ p{
   .hero__link{
     line-height:1;
     a {
-      font-size: 14px !important;
+      font-weight: normal !important;
+      font-size: 12px !important;
     }
   }
   .call-to-action__panel{
@@ -1019,20 +1045,4 @@ p{
     left:20px !important;
   }
 
-}
-
-/* Large or Lower */
-@media (max-width: 992px) {
-  .heronav{
-    display:none;
-    &.open--nav{
-      display:block;
-      padding-top:20px;
-      .heronav__item{
-        display: block;
-        text-align: left;
-        padding: 5px 10px;
-      }
-    }
-  }
 }

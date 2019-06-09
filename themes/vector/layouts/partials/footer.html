@@ -3,12 +3,12 @@
         <div class="row pb-5">
             <div class="col-12 col-lg-5 col-xl-4 pr-3 pr-lg-5 pb-5 pb-lg-0">
                 <img alt="Vector by Timber.io" class="footer__logo mb-4" src="/images/logo-dark.png">
-                <div class="footer__subscription pb-4">
-                    <form action="{{ $.Site.Params.subscribeActionURL }}" method="post">
+                <form action="{{ $.Site.Params.subscribeActionURL }}" method="post">
+                    <div class="footer__subscription pb-4">
                         <input class="form-control mr-2" name="email" placeholder="email" type="email">
                         <button class="btn btn--darkblue" type="submit">Subscribe</button>
-                    </form>
-                </div>
+                    </div>
+                </form>
                 <a href="{{ $.Site.Params.repoURL }}"><img alt="View on GitHub" class="footer__social mr-2"
                                  src="/images/github-icon.png"></a>
                 <a href="#"><img alt="Discuss on Slack" class="footer__social" src="/images/slack-icon.png"></a>

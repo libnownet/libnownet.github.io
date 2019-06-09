@@ -3,7 +3,7 @@
     <div class="row pt-5">
         <div class="col text-center">
             <h2 class="hero__tag_line headline pb-2">Vector Makes Observability Data Simple</h2>
-            <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for collecting, transforming, and routing log, metrics, and events with ease.</h5>
+            <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for collecting, transforming, and routing log, metrics, and events.</h5>
             <a class="btn btn--primary btn--rounded mb-3 mb-sm-0 mr-0 mr-sm-3" href="{{ $.Site.Params.getStartedURL }}">Get Started</a>
             <a class="btn btn--outline btn--rounded mb-3 mb-sm-0" href="{{ $.Site.Params.downloadURL }}">Download v0.1.0</a>
         </div>
@@ -30,13 +30,13 @@
             <img alt="Sources, Transforms and Sinks" class="hero__illustration"
                  src="/images/hero-background.svg">
         </div>
-        <div class="col-4 text-center pl-7">
+        <div class="col-4 text-right">
             <h4 class="hero__link"><a href="{{ $.Site.Params.sourcesURL }}">1. Take data from anywhere</a></h4>
         </div>
         <div class="col-4 text-center">
             <h4 class="hero__link"><a href="{{ $.Site.Params.transformsURL }}">2. Structure & transform it</a></h4>
         </div>
-        <div class="col-4 text-center pr-7">
+        <div class="col-4 text-left">
             <h4 class="hero__link"><a href="{{ $.Site.Params.sinksURL }}">3. Send it to many destinations</a></h4>
         </div>
     </div>
@@ -71,10 +71,10 @@
                 <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-4">
                     <div class="featurecard">
                         <div class="featurecard__icon pb-3">
-                            <img alt="Easy To Operate" src="/images/feature-ease.png">
+                            <img alt="Easy To Operate" src="/images/feature-agnostic.png">
                         </div>
-                        <h4 class="featurecard__title pb-2">Easy Deploys</h4>
-                        <p class="featurecard__copy">Vector compiles to a single static binary with no runtime. Making it easy to deploy and manage.</p>
+                        <h4 class="featurecard__title pb-2">Storage Agnostic</h4>
+                        <p class="featurecard__copy">Unbiased and open. Vector is obsessed with helping you get the most of out of your data. Regardless of the storage.</p>
                     </div>
                 </div>
 
@@ -95,8 +95,7 @@
                             <img alt="Logs or Metrics" src="/images/feature-logs.png">
                         </div>
                         <h4 class="featurecard__title pb-2">Logs, Metrics, & Events</h4>
-                        <p class="featurecard__copy">Vector unifies logs, metrics, and events, making it easy to <a href="{{ $.Site.Params.logsToMetricsURL }}">convert logs to metrics</a>.
-                            No need for 2 separate tools.</p>
+                        <p class="featurecard__copy">Vector unifies logs, metrics, and events, making it easy to <a href="{{ $.Site.Params.logsToMetricsURL }}">convert logs to events and metrics</a>.
                     </div>
                 </div>
 
@@ -107,7 +106,7 @@
                         </div>
                         <h4 class="featurecard__title pb-2">Programmable Transforms</h4>
                         <p class="featurecard__copy">An <a href="{{ $.Site.Params.luaURL }}">embedded LUA engine</a> makes it easy to program powerful
-                            transforms, no limitations.</p>
+                            transforms. Handle complex use cases without limitations.</p>
                     </div>
                 </div>
 
@@ -117,8 +116,7 @@
                             <img alt="Reliable Delivery" src="/images/feature-delivery.png">
                         </div>
                         <h4 class="featurecard__title pb-2">At-Least Once Delivery</h4>
-                        <p class="featurecard__copy">Vector's core competency is delivery, it's not just a means to an end
-                            for us, which is why we offer an <span>at least once guarantee</span>.</p>
+                        <p class="featurecard__copy">Vector's core competency is delivery, offering an <a href="#">at least once guarantee</a>, for capable sources and sinks.</p>
                     </div>
                 </div>
 
@@ -143,7 +141,7 @@
 
             <div class="row mb-4">
                 <div class="col">
-                    <div class="row performance_testbar">
+                    <div class="row performance_testbar p-3">
                         <div class="col-12 col-md">
                             <div class="performance_testbar__select" id="performance_testbar__select"
                                  v-on:click.prevent="performance_tests_open = true">{{ "{{" }} performance_tests[selected_performance_test].name {{ "}}" }} <img
@@ -323,14 +321,6 @@
                                 <img src="/images/topologies-stream-based.svg" class="d-block w-100" alt="Stream-based topology">
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#topologiesIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#topologiesIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
                 </div>
             </div>
