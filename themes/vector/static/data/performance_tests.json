@@ -1,8 +1,89 @@
 {
   "performance_tests": [
     {
+      "name": "TCP To Blackhole",
+      "description": "A raw internal performance test, accepting data over TCP and discarding it",
+      "metrics": [
+        {
+          "name": "IO",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": "86mib/s",
+              "value": 90214676.67
+            },
+            {
+              "name": "FluentBit",
+              "label": "64.4mib/s",
+              "value": 67479226.31
+            },
+            {
+              "name": "Logstash",
+              "label": "40.6mib/s",
+              "value": 42581836.28
+            },
+            {
+              "name": "FluentD",
+              "label": "27.7mib/s",
+              "value": 29077723.89
+            }
+          ]
+        },
+        {
+          "name": "Mem",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": "181mib",
+              "value": 189775872.0
+            },
+            {
+              "name": "FluentD",
+              "label": "294mib",
+              "value": 308252672.0
+            },
+            {
+              "name": "FluentBit",
+              "label": "614.8mib",
+              "value": 644636672.0
+            },
+            {
+              "name": "Logstash",
+              "label": "742.5mib",
+              "value": 778551296.0
+            }
+          ]
+        },
+        {
+          "name": "CPU",
+          "measurements": [
+            {
+              "name": "FluentBit",
+              "label": "0.47 1m avg",
+              "value": 0.47
+            },
+            {
+              "name": "FluentD",
+              "label": "0.83 1m avg",
+              "value": 0.83
+            },
+            {
+              "name": "Vector",
+              "label": "1.67 1m avg",
+              "value": 1.67
+            },
+            {
+              "name": "Logstash",
+              "label": "1.77 1m avg",
+              "value": 1.77
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "File To TCP",
-      "description": "A file tailing performance test, tailing 10 files and forwarding data over TCP",
+      "description": "A file tailing test, tailing 10 files and forwarding data over TCP",
       "metrics": [
         {
           "name": "IO",
@@ -121,6 +202,183 @@
               "name": "Splunk HF",
               "label": "2.61 1m avg",
               "value": 2.61
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Regex Parsing",
+      "description": "A Regex test, parsing Apache common log formats",
+      "metrics": [
+        {
+          "name": "IO",
+          "measurements": [
+            {
+              "name": "FluentBit",
+              "label": "20.5mib/s",
+              "value": 21508433.64
+            },
+            {
+              "name": "Vector",
+              "label": "13.2mib/s",
+              "value": 13834604.58
+            },
+            {
+              "name": "Splunk HF",
+              "label": "7.8mib/s",
+              "value": 8175926.8
+            },
+            {
+              "name": "Logstash",
+              "label": "4.6mib/s",
+              "value": 4775582.95
+            },
+            {
+              "name": "FluentD",
+              "label": "2.6mib/s",
+              "value": 2687343.81
+            }
+          ]
+        },
+        {
+          "name": "Mem",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": "179.3mib",
+              "value": 187977728.0
+            },
+            {
+              "name": "FluentD",
+              "label": "246.1mib",
+              "value": 258084864.0
+            },
+            {
+              "name": "Splunk HF",
+              "label": "442.4mib",
+              "value": 463929344.0
+            },
+            {
+              "name": "FluentBit",
+              "label": "584.5mib",
+              "value": 612917248.0
+            },
+            {
+              "name": "Logstash",
+              "label": "743.8mib",
+              "value": 779882496.0
+            }
+          ]
+        },
+        {
+          "name": "CPU",
+          "measurements": [
+            {
+              "name": "FluentBit",
+              "label": "0.48 1m avg",
+              "value": 0.48
+            },
+            {
+              "name": "FluentD",
+              "label": "0.77 1m avg",
+              "value": 0.77
+            },
+            {
+              "name": "Vector",
+              "label": "0.9 1m avg",
+              "value": 0.9
+            },
+            {
+              "name": "Logstash",
+              "label": "2.14 1m avg",
+              "value": 2.14
+            },
+            {
+              "name": "Splunk HF",
+              "label": "2.19 1m avg",
+              "value": 2.19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TCP To HTTP",
+      "description": "An HTTP performance test, accepting data over TCP and forwarding it over HTTP",
+      "metrics": [
+        {
+          "name": "IO",
+          "measurements": [
+            {
+              "name": "Vector",
+              "label": "26.7mib/s",
+              "value": 28038601.8
+            },
+            {
+              "name": "FluentBit",
+              "label": "19.6mib/s",
+              "value": 20516963.4
+            },
+            {
+              "name": "Logstash",
+              "label": "2.7mib/s",
+              "value": 2781534.84
+            },
+            {
+              "name": "FluentD",
+              "label": "897.8kib/s",
+              "value": 919326.69
+            }
+          ]
+        },
+        {
+          "name": "Mem",
+          "measurements": [
+            {
+              "name": "FluentD",
+              "label": "188.9mib",
+              "value": 198041600.0
+            },
+            {
+              "name": "Vector",
+              "label": "233mib",
+              "value": 244322304.0
+            },
+            {
+              "name": "Logstash",
+              "label": "772mib",
+              "value": 809459712.0
+            },
+            {
+              "name": "FluentBit",
+              "label": "1.1gib",
+              "value": 1217200128.0
+            }
+          ]
+        },
+        {
+          "name": "CPU",
+          "measurements": [
+            {
+              "name": "FluentBit",
+              "label": "0.52 1m avg",
+              "value": 0.52
+            },
+            {
+              "name": "FluentD",
+              "label": "0.74 1m avg",
+              "value": 0.74
+            },
+            {
+              "name": "Vector",
+              "label": "0.94 1m avg",
+              "value": 0.94
+            },
+            {
+              "name": "Logstash",
+              "label": "1.21 1m avg",
+              "value": 1.21
             }
           ]
         }
@@ -247,264 +505,6 @@
               "name": "Logstash",
               "label": "2.2 1m avg",
               "value": 2.2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TCP To HTTP",
-      "description": "An HTTP performance test, accepting data over TCP and forwarding it over HTTP",
-      "metrics": [
-        {
-          "name": "IO",
-          "measurements": [
-            {
-              "name": "Vector",
-              "label": "26.7mib/s",
-              "value": 28038601.8
-            },
-            {
-              "name": "FluentBit",
-              "label": "19.6mib/s",
-              "value": 20516963.4
-            },
-            {
-              "name": "Logstash",
-              "label": "2.7mib/s",
-              "value": 2781534.84
-            },
-            {
-              "name": "FluentD",
-              "label": "897.8kib/s",
-              "value": 919326.69
-            }
-          ]
-        },
-        {
-          "name": "Mem",
-          "measurements": [
-            {
-              "name": "FluentD",
-              "label": "188.9mib",
-              "value": 198041600.0
-            },
-            {
-              "name": "Vector",
-              "label": "233mib",
-              "value": 244322304.0
-            },
-            {
-              "name": "Logstash",
-              "label": "772mib",
-              "value": 809459712.0
-            },
-            {
-              "name": "FluentBit",
-              "label": "1.1gib",
-              "value": 1217200128.0
-            }
-          ]
-        },
-        {
-          "name": "CPU",
-          "measurements": [
-            {
-              "name": "FluentBit",
-              "label": "0.52 1m avg",
-              "value": 0.52
-            },
-            {
-              "name": "FluentD",
-              "label": "0.74 1m avg",
-              "value": 0.74
-            },
-            {
-              "name": "Vector",
-              "label": "0.94 1m avg",
-              "value": 0.94
-            },
-            {
-              "name": "Logstash",
-              "label": "1.21 1m avg",
-              "value": 1.21
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TCP To Blachole",
-      "description": "A raw performance test, accepting data over TCP and simply discarding it",
-      "metrics": [
-        {
-          "name": "IO",
-          "measurements": [
-            {
-              "name": "Vector",
-              "label": "86mib/s",
-              "value": 90214676.67
-            },
-            {
-              "name": "FluentBit",
-              "label": "64.4mib/s",
-              "value": 67479226.31
-            },
-            {
-              "name": "Logstash",
-              "label": "40.6mib/s",
-              "value": 42581836.28
-            },
-            {
-              "name": "FluentD",
-              "label": "27.7mib/s",
-              "value": 29077723.89
-            }
-          ]
-        },
-        {
-          "name": "Mem",
-          "measurements": [
-            {
-              "name": "Vector",
-              "label": "181mib",
-              "value": 189775872.0
-            },
-            {
-              "name": "FluentD",
-              "label": "294mib",
-              "value": 308252672.0
-            },
-            {
-              "name": "FluentBit",
-              "label": "614.8mib",
-              "value": 644636672.0
-            },
-            {
-              "name": "Logstash",
-              "label": "742.5mib",
-              "value": 778551296.0
-            }
-          ]
-        },
-        {
-          "name": "CPU",
-          "measurements": [
-            {
-              "name": "FluentBit",
-              "label": "0.47 1m avg",
-              "value": 0.47
-            },
-            {
-              "name": "FluentD",
-              "label": "0.83 1m avg",
-              "value": 0.83
-            },
-            {
-              "name": "Vector",
-              "label": "1.67 1m avg",
-              "value": 1.67
-            },
-            {
-              "name": "Logstash",
-              "label": "1.77 1m avg",
-              "value": 1.77
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Regex Parsing",
-      "description": "A Regex test, parsing Apache common log formats",
-      "metrics": [
-        {
-          "name": "IO",
-          "measurements": [
-            {
-              "name": "FluentBit",
-              "label": "20.5mib/s",
-              "value": 21508433.64
-            },
-            {
-              "name": "Vector",
-              "label": "13.2mib/s",
-              "value": 13834604.58
-            },
-            {
-              "name": "Splunk HF",
-              "label": "7.8mib/s",
-              "value": 8175926.8
-            },
-            {
-              "name": "Logstash",
-              "label": "4.6mib/s",
-              "value": 4775582.95
-            },
-            {
-              "name": "FluentD",
-              "label": "2.6mib/s",
-              "value": 2687343.81
-            }
-          ]
-        },
-        {
-          "name": "Mem",
-          "measurements": [
-            {
-              "name": "Vector",
-              "label": "179.3mib",
-              "value": 187977728.0
-            },
-            {
-              "name": "FluentD",
-              "label": "246.1mib",
-              "value": 258084864.0
-            },
-            {
-              "name": "Splunk HF",
-              "label": "442.4mib",
-              "value": 463929344.0
-            },
-            {
-              "name": "FluentBit",
-              "label": "584.5mib",
-              "value": 612917248.0
-            },
-            {
-              "name": "Logstash",
-              "label": "743.8mib",
-              "value": 779882496.0
-            }
-          ]
-        },
-        {
-          "name": "CPU",
-          "measurements": [
-            {
-              "name": "FluentBit",
-              "label": "0.48 1m avg",
-              "value": 0.48
-            },
-            {
-              "name": "FluentD",
-              "label": "0.77 1m avg",
-              "value": 0.77
-            },
-            {
-              "name": "Vector",
-              "label": "0.9 1m avg",
-              "value": 0.9
-            },
-            {
-              "name": "Logstash",
-              "label": "2.14 1m avg",
-              "value": 2.14
-            },
-            {
-              "name": "Splunk HF",
-              "label": "2.19 1m avg",
-              "value": 2.19
             }
           ]
         }
