@@ -349,13 +349,13 @@ p{
     "Lucida Grande", "Segoe UI", sans-serif;
   }
   .hero__link{
+    font-family: "Ubuntu", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Lucida Grande", "Segoe UI", sans-serif;
+    font-weight:bold;
+    font-size:20px;
     a{
       color: rgb(255, 255, 255);
-      font-family: "Ubuntu", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-    "Lucida Grande", "Segoe UI", sans-serif;
-      font-weight:bold;
       text-decoration:underline;
-      font-size:20px;
       &:hover{
         color: white;
       }
@@ -485,7 +485,7 @@ p{
   }
   .performance_test__label{
     font-size:22px;
-    max-width:210px;
+    max-width:260px;
     cursor:default;
   }
   .performance_test__bar__element{
@@ -560,12 +560,13 @@ p{
 
       th:first-child {
         text-align: right;
-        width: 225px;
+        width: 290px;
       }
     }
 
     tbody {
       td {
+        border-left: 2px solid white;
         padding: 13px 20px;
         text-align: center;
 
@@ -576,22 +577,39 @@ p{
       }
 
       td.failed {
-        background-color: #f44af5;
+        background-color: #E0005E;
         color: white;
+        font-weight: bold;
       }
 
       td.passed {
-        background-color: #1adefa;
+        background-color: #00cd7a;
         color: white;
+        font-weight: bold;
       }
 
       td.warning {
-        background-color: #feaf06;
+        background-color: #FFAE00;
         color: white;
+        font-weight: bold;
       }
 
       td:first-child {
         text-align: right;
+      }
+
+      tr:hover {
+        td.failed {
+          background-color: #FF1A7B;
+        }
+
+        td.passed {
+          background-color: #00FF98;
+        }
+
+        td.warning {
+          background-color: #FFD73F;
+        }
       }
     }
   }
@@ -1008,10 +1026,8 @@ p{
 @media (max-width: 768px) {
   .hero__link{
     line-height:1.2;
-    a {
-      font-weight: normal !important;
-      font-size: 18px !important;
-    }
+    font-size: 18px !important;
+    font-weight: normal !important;
   }
 }
 
@@ -1022,10 +1038,8 @@ p{
   }
   .hero__link{
     line-height:1;
-    a {
-      font-weight: normal !important;
-      font-size: 12px !important;
-    }
+    font-weight: normal !important;
+    font-size: 12px !important;
   }
   .call-to-action__panel{
     top:-25% !important;

@@ -3,7 +3,7 @@
     <div class="row pt-5">
         <div class="col text-center">
             <h2 class="hero__tag_line headline pb-2">Vector Makes Observability Data Simple</h2>
-            <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for collecting, transforming, and routing log, metrics, and events.</h5>
+            <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for collecting, transforming, and routing logs, metrics, and events.</h5>
             <a class="btn btn--primary btn--rounded mb-3 mb-sm-0 mr-0 mr-sm-3" href="{{ $.Site.Params.getStartedURL }}">Get Started</a>
             <a class="btn btn--outline btn--rounded mb-3 mb-sm-0" href="{{ $.Site.Params.downloadURL }}">Download v0.1.0</a>
         </div>
@@ -31,13 +31,13 @@
                  src="/images/hero-background.svg">
         </div>
         <div class="col-4 text-right">
-            <h4 class="hero__link"><a href="{{ $.Site.Params.sourcesURL }}">1. Take data from anywhere</a></h4>
+            <h4 class="hero__link">1. Take data from <a href="{{ $.Site.Params.sourcesURL }}">sources</a></h4>
         </div>
         <div class="col-4 text-center">
-            <h4 class="hero__link"><a href="{{ $.Site.Params.transformsURL }}">2. Structure & transform it</a></h4>
+            <h4 class="hero__link">2. Structure & <a href="{{ $.Site.Params.transformsURL }}">transform</a> it</h4>
         </div>
         <div class="col-4 text-left">
-            <h4 class="hero__link"><a href="{{ $.Site.Params.sinksURL }}">3. Send it to many destinations</a></h4>
+            <h4 class="hero__link">3. Send it to many <a href="{{ $.Site.Params.sinksURL }}">sinks</a></h4>
         </div>
     </div>
 {{ end }}
@@ -73,8 +73,8 @@
                         <div class="featurecard__icon pb-3">
                             <img alt="Easy To Operate" src="/images/feature-agnostic.png">
                         </div>
-                        <h4 class="featurecard__title pb-2">Storage Agnostic</h4>
-                        <p class="featurecard__copy">Unbiased and open. Vector is obsessed with helping you get the most of out of your data. Regardless of the storage.</p>
+                        <h4 class="featurecard__title pb-2">Storage Independent</h4>
+                        <p class="featurecard__copy">Unbiased and open. You can be sure Vector has your best interest in mind when it comes time to switch storages.</p>
                     </div>
                 </div>
 
@@ -204,7 +204,7 @@
 
             <div class="row">
                 <div class="table-responsive">
-                    <table class="correctness__results">
+                    <table class="correctness__results table-borderless">
                         <thead>
                             <tr>
                                 <th></th>
@@ -219,64 +219,74 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="#">Buffer persistence</a></td>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/disk_buffer_persistence_correctness">Disk buffer persistence</a></td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="failed">𝘅</td>
+                                <td class="warning">⚠</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/file_rotate_create_correctness">File rotate (create)</a></td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/fil_rotate_truncate_correctness">File rotate (copytruncate)</a></td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
                             </tr>
                             <tr>
-                                <td><a href="#">File rotation</a></td>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/file_truncation_correctness">File truncation</a></td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/nested_json_correctness">Nested JSON</a></td>
+                                <td class="passed">✔</td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">File truncation</a></td>
                                 <td class="passed">✔</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">Nested JSON</a></td>
                                 <td class="passed">✔</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
                             </tr>
                             <tr>
-                                <td><a href="#">SIGHUP</a></td>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/sighup_correctness">SIGHUP</a></td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
                                 <td class="warning">⚠</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
                             </tr>
                             <tr>
-                                <td><a href="#">TCP Streaming</a></td>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/tcp_stream_correctness">TCP Streaming</a></td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
-                                <td class="failed">𝘅</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
                             </tr>
                         </tbody>
                     </table>
@@ -568,7 +578,7 @@
                 <div class="row timeline__item">
                     <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color1">
                         <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/5">v0.3 - Parsing & Transforming</a></h4>
-                        <div class="pill pill--beta mt-1 mb-2">In Beta</div>
+                        <div class="pill pill--beta mt-1 mb-2">In Dev</div>
                         <p class="timeline__copy">LUA runtime, Regex parser, Grok parser, tokenized parser, and more.</p>
                     </div>
                 </div>
