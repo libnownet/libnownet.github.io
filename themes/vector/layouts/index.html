@@ -164,7 +164,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3" v-bind:class="{ 'performance_test__bar--active': measurement.name == 'Vector' }"
+            <div class="row mt-3 mb-3" v-bind:class="{ 'performance_test__bar--active': measurement.name == 'Vector' }"
                  v-for="(measurement, index) in performance_tests[selected_performance_test].metrics[selected_metric].measurements">
                 <div class="col-12 col-md performance_test__label text-left text-md-right">{{ "{{" }} measurement.name {{ "}}" }}</div>
                 <div class="col-12 col-md">
@@ -176,7 +176,6 @@
                 </div>
             </div>
 
-
             <div class="row mt-4">
                 <div class="col text-center">
                     <h5 class="performance_test__descriptor">{{ "{{" }} performance_tests[selected_performance_test].description {{ "}}" }}</h5>
@@ -185,7 +184,7 @@
 
             <div class="row mt-2">
                 <div class="col section__links text-center">
-                    <a href="{{ $.Site.Params.performanceURL }}">learn more</a>
+                    <a href="{{ "{{" }} performance_tests[selected_performance_test].url {{ "}}" }}">learn more</a>
                 </div>
             </div>
 
@@ -239,7 +238,7 @@
                                 <td class="passed">✔</td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/fil_rotate_truncate_correctness">File rotate (copytruncate)</a></td>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/file_rotate_truncate_correctness">File rotate (copytruncate)</a></td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
@@ -572,7 +571,7 @@
                     <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color1">
                         <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/3">v0.2 - Metrics Support</a></h4>
                         <div class="pill pill--released mt-1 mb-2">Released</div>
-                        <p class="timeline__copy">Basic metrics collection and shipping</p>
+                        <p class="timeline__copy">Basic metrics support in the context of logs: converting logs to metrics, outputting metrics to popular metrics storages.</p>
                     </div>
                 </div>
                 <div class="row timeline__item">

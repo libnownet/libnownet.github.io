@@ -483,9 +483,21 @@ p{
     width: 15px;
     margin-left: 5px;
   }
+  .performance_test__result {
+    background: white;
+  }
+
+  .performance_test__diagram {
+    .col {
+      background: white;
+      img {
+        max-height: 250px;
+      }
+    }
+  }
   .performance_test__label{
     font-size:22px;
-    max-width:260px;
+    max-width:160px;
     cursor:default;
   }
   .performance_test__bar__element{
@@ -518,7 +530,6 @@ p{
   }
   .performance_test__descriptor{
     font-weight:400;
-    color:#5F6C7F;
   }
 
 }
@@ -566,7 +577,7 @@ p{
 
     tbody {
       td {
-        border-left: 2px solid white;
+        border-left: 10px solid white;
         padding: 13px 20px;
         text-align: center;
 
@@ -577,19 +588,19 @@ p{
       }
 
       td.failed {
-        background-color: #E0005E;
+        background-color: darken(#CA58EB, 5%);
         color: white;
         font-weight: bold;
       }
 
       td.passed {
-        background-color: #00cd7a;
+        background-color: darken(#1AE7FF, 5%);
         color: white;
         font-weight: bold;
       }
 
       td.warning {
-        background-color: #FFAE00;
+        background-color: darken(#FFDF00, 5%);
         color: white;
         font-weight: bold;
       }
@@ -600,15 +611,15 @@ p{
 
       tr:hover {
         td.failed {
-          background-color: #FF1A7B;
+          background-color: lighten(#CA58EB, 10%);
         }
 
         td.passed {
-          background-color: #00FF98;
+          background-color: lighten(#1AE7FF, 10%);
         }
 
         td.warning {
-          background-color: #FFD73F;
+          background-color: lighten(#FFDF00, 10%);
         }
       }
     }
