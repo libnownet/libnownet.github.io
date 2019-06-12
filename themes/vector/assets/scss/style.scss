@@ -600,7 +600,7 @@ p{
       }
 
       td.warning {
-        background-color: darken(#FFDF00, 5%);
+        background-color: #FFDF00;
         color: white;
         font-weight: bold;
       }
@@ -619,7 +619,7 @@ p{
         }
 
         td.warning {
-          background-color: lighten(#FFDF00, 10%);
+          background-color: lighten(#FFDF00, 15%);
         }
       }
     }

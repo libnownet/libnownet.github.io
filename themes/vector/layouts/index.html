@@ -184,7 +184,7 @@
 
             <div class="row mt-2">
                 <div class="col section__links text-center">
-                    <a href="{{ "{{" }} performance_tests[selected_performance_test].url {{ "}}" }}">learn more</a>
+                    <a v-bind:href="'https://github.com/timberio/vector-test-harness/tree/master/cases/' + performance_tests[selected_performance_test].slug">learn more</a>
                 </div>
             </div>
 
@@ -258,16 +258,6 @@
                                 <td class="passed">✔</td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/nested_json_correctness">Nested JSON</a></td>
-                                <td class="passed">✔</td>
-                                <td class="passed">✔</td>
-                                <td class="failed">𝘅</td>
-                                <td class="passed">✔</td>
-                                <td class="passed">✔</td>
-                                <td class="passed">✔</td>
-                                <td class="passed">✔</td>
-                            </tr>
-                            <tr>
                                 <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/sighup_correctness">SIGHUP</a></td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
@@ -284,6 +274,16 @@
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/wrapped_json_correctness">Wrapped JSON</a></td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
+                                <td class="failed">𝘅</td>
+                                <td class="passed">✔</td>
+                                <td class="passed">✔</td>
                                 <td class="passed">✔</td>
                                 <td class="passed">✔</td>
                             </tr>
@@ -764,7 +764,6 @@
                     }
                     $(obj).delay(400 * index).fadeOut("slow", function () {
                         let source = hero_source_array[i];
-                        console.log(source)
                         $(obj).parent().attr("href", source.url);
                         $(obj).attr("src", "/images/source-" + source.name + ".png");
                         $(obj).attr("data-fadeindex", i);

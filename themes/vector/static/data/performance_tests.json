@@ -1,6 +1,7 @@
 {
   "performance_tests": [
     {
+      "slug": "tcp_to_blackhole_performance",
       "name": "TCP To Blackhole",
       "description": "A raw internal performance test, accepting data over TCP and discarding it",
       "metrics": [
@@ -82,6 +83,7 @@
       ]
     },
     {
+      "slug": "file_to_tcp_performance",
       "name": "File To TCP",
       "description": "A file tailing test, tailing 10 files and forwarding data over TCP",
       "metrics": [
@@ -208,6 +210,7 @@
       ]
     },
     {
+      "slug": "regex_parsing_performance",
       "name": "Regex Parsing",
       "description": "A Regex test, parsing Apache common log formats",
       "metrics": [
@@ -304,6 +307,7 @@
       ]
     },
     {
+      "slug": "tcp_to_http_performance",
       "name": "TCP To HTTP",
       "description": "An HTTP performance test, accepting data over TCP and forwarding it over HTTP",
       "metrics": [
@@ -385,6 +389,7 @@
       ]
     },
     {
+      "slug": "tcp_to_tcp_performance",
       "name": "TCP To TCP",
       "description": "A TCP performance test, accepting data over TCP and forwarding it over TCP",
       "metrics": [
