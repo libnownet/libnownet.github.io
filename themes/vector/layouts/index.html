@@ -37,7 +37,7 @@
             <h4 class="hero__link">2. Structure & <a href="{{ $.Site.Params.transformsURL }}">transform</a> it</h4>
         </div>
         <div class="col-4 text-left">
-            <h4 class="hero__link">3. Send it to many <a href="{{ $.Site.Params.sinksURL }}">sinks</a></h4>
+            <h4 class="hero__link">3. Send it to <a href="{{ $.Site.Params.sinksURL }}">sinks</a></h4>
         </div>
     </div>
 {{ end }}
@@ -73,8 +73,8 @@
                         <div class="featurecard__icon pb-3">
                             <img alt="Easy To Operate" src="/images/feature-agnostic.png">
                         </div>
-                        <h4 class="featurecard__title pb-2">Storage Independent</h4>
-                        <p class="featurecard__copy">Unbiased and open. You can be sure Vector has your best interest in mind when it comes time to switch storages.</p>
+                        <h4 class="featurecard__title pb-2">Vendor Neutral</h4>
+                        <p class="featurecard__copy">Vector does not favor any specific storage. It fosters a fair, open ecosystem with the user's best interest in mind.</p>
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
                             <img alt="Logs or Metrics" src="/images/feature-logs.png">
                         </div>
                         <h4 class="featurecard__title pb-2">Logs, Metrics, & Events</h4>
-                        <p class="featurecard__copy">Vector unifies logs, metrics, and events, making it easy to <a href="{{ $.Site.Params.logsToMetricsURL }}">convert logs to events and metrics</a>.
+                        <p class="featurecard__copy">Vector unifies logs, metrics, and events at the source, making it collect and ship all observability data.
                     </div>
                 </div>
 
@@ -115,8 +115,8 @@
                         <div class="featurecard__icon pb-3">
                             <img alt="Reliable Delivery" src="/images/feature-delivery.png">
                         </div>
-                        <h4 class="featurecard__title pb-2">At-Least Once Delivery</h4>
-                        <p class="featurecard__copy">Vector's core competency is delivery, offering an <a href="#">at least once guarantee</a>, for capable sources and sinks.</p>
+                        <h4 class="featurecard__title pb-2">Clear Guarantees</h4>
+                        <p class="featurecard__copy">Vector is <a href="{{ $.Site.Params.guaranteesURL }}">clear on it's guarantees</a>, helping you to make the appropriate trade offs for your use case.</p>
                     </div>
                 </div>
 
@@ -258,7 +258,7 @@
                                 <td class="passed">✔</td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/sighup_correctness">SIGHUP</a></td>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/sighup_correctness">Process (SIGHUP)</a></td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
                                 <td class="failed">𝘅</td>
@@ -278,7 +278,7 @@
                                 <td class="passed">✔</td>
                             </tr>
                             <tr>
-                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/wrapped_json_correctness">Wrapped JSON</a></td>
+                                <td><a href="https://github.com/timberio/vector-test-harness/tree/master/cases/wrapped_json_correctness">JSON (wrapped)</a></td>
                                 <td class="passed">✔</td>
                                 <td class="passed">✔</td>
                                 <td class="failed">𝘅</td>
