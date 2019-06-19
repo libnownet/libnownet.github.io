@@ -1,0 +1,28 @@
+{{ define "hero" }}
+    <!-- Headline & Tagline -->
+    <div class="row pt-6">
+        <div class="col text-center">
+            <h2 class="hero__tag_line headline pb-2">Join The Vector Mailing List</h2>
+            <h5 class="tagline pb-7">Simple monthly updates. No spam, ever.</h5>
+        </div>
+    </div>
+{{ end }}
+
+{{ define "main" }}
+    <section class="subscribe_panel pt-3 pb-6">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="panel py-5 px-6">
+                        <form action="{{ $.Site.Params.subscribeActionURL }}" method="post">
+                            <div class="subscribe_form">
+                                <input class="form-control form-control-lg mr-2" name="email" placeholder="you@email.com" type="email">
+                                <button class="btn btn-lg btn--darkblue" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}
