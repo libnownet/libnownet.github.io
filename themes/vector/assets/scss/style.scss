@@ -178,6 +178,19 @@ p{
   display: none;
 }
 
+.panel {
+  background-color: white;
+  border: 2px solid #dadfe6;
+  -webkit-box-shadow: 0px 3px 13px 5px rgba(4, 27, 59, 0.04), 0 6px 12px rgba(0,0,0,0.05);
+  box-shadow: 0px 3px 13px 5px rgba(4, 27, 59, 0.04), 0 6px 12px rgba(0,0,0,0.05);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 30px;
+  display: block;
+  cursor:pointer !important;
+  text-align: center;
+}
+
 .pill{
   padding: 1px 20px;
   -webkit-border-radius: 10px;
@@ -221,6 +234,10 @@ p{
     color:#5F6C7F;
     opacity:0.5;
   }
+}
+
+.form-control-lg {
+  height: 62px;
 }
 
 /* Top Bar */
@@ -930,45 +947,6 @@ p{
   }
 }
 
-.community_resources {
-  .resource_box{
-    background-color: white;
-    border: 2px solid #dadfe6;
-    -webkit-box-shadow: 0px 3px 13px 5px rgba(4, 27, 59, 0.04), 0 6px 12px rgba(0,0,0,0.05);
-    box-shadow: 0px 3px 13px 5px rgba(4, 27, 59, 0.04), 0 6px 12px rgba(0,0,0,0.05);
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    padding: 30px;
-    display: block;
-    cursor:pointer !important;
-    text-align: center;
-    &:hover{
-      -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.08), 0 10px 10px rgba(0,0,0,0.05);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.08), 0 10px 10px rgba(0,0,0,0.05);
-      border-color:#64dcf8;
-      h4 {
-        color: #64dcf8;
-      }
-      .description {
-        color: #64dcf8;
-      }
-    }
-    img.center_image{
-      display: block;
-      min-height: 100px;
-      max-height: 100px;
-      margin: 0 auto 20px auto;
-    }
-    h4 {
-      font-weight:500;
-      color:#1e375a;
-    }
-    .description {
-      color:#1e375a;
-    }
-  }
-}
-
 .footer{
   .footer__logo{
     max-width:100%;
@@ -1014,6 +992,7 @@ p{
 }
 
 @import "community";
+@import "mailing_list";
 
 
 /*Responsive Classes */

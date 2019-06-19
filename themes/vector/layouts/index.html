@@ -368,9 +368,9 @@
                     <img alt="Configuration Flow" class="d-none d-lg-block configuration__arrows"
                          src="/images/configuration-arrows.svg">
                     <p>
-                        [sources.nginx_logs]<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;</span><br>
+                        [sources.logs]<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;</span><br>
                         &nbsp;&nbsp;&nbsp;type = 'file'<br>
-                        &nbsp;&nbsp;&nbsp;include = ['/var/log/nginx*.log']<br>
+                        &nbsp;&nbsp;&nbsp;include = ['/var/log/app*.log']<br>
                         &nbsp;&nbsp;&nbsp;start_at_beginning = false<br>
                         &nbsp;&nbsp;&nbsp;ignore_older = 3600
                     </p>
@@ -381,10 +381,10 @@
                 </div>
                 <div class="col-12 col-lg-6 col-xxl-4 configuration__toml toml--color2">
                     <p>
-                        [transforms.nginx_parser]<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;</span><br>
-                        &nbsp;&nbsp;&nbsp;inputs = ['nginx_logs']<br>
-                        &nbsp;&nbsp;&nbsp;type = 'format_parser'<br>
-                        &nbsp;&nbsp;&nbsp;format = 'nginx_error_log'
+                        [transforms.tokenizer]<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;</span><br>
+                        &nbsp;&nbsp;&nbsp;inputs = ['logs']<br>
+                        &nbsp;&nbsp;&nbsp;type = 'tokenizer'<br>
+                        &nbsp;&nbsp;&nbsp;field_names = ["timestamp", "level", "message"]
                     </p>
                 </div>
                 <div class="d-none d-lg-block col-5 configuration__callout">
@@ -394,7 +394,7 @@
                 <div class="col-12 col-lg-6 col-xxl-4 configuration__toml toml--color2">
                     <p>
                         [transforms.sampler]<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;</span><br>
-                        &nbsp;&nbsp;&nbsp;inputs = ['nginx_parser']<br>
+                        &nbsp;&nbsp;&nbsp;inputs = ['tokenizer']<br>
                         &nbsp;&nbsp;&nbsp;type = 'sampler'<br>
                         &nbsp;&nbsp;&nbsp;hash_field = 'request_id'<br>
                         &nbsp;&nbsp;&nbsp;rate = 10
@@ -419,10 +419,11 @@
                 <div class="col-12 col-lg-6 col-xxl-4 configuration__toml toml--end  toml--color3">
                     <p>
                         [sinks.s3_archive]<span class="d-none d-lg-inline">&nbsp;&nbsp;&nbsp;</span><br>
-                        &nbsp;&nbsp;&nbsp;inputs = ['nginx_parser']<br>
+                        &nbsp;&nbsp;&nbsp;inputs = ['tokenizer']<br>
                         &nbsp;&nbsp;&nbsp;type = 's3'<br>
                         &nbsp;&nbsp;&nbsp;region = 'us-east-1'<br>
-                        &nbsp;&nbsp;&nbsp;bucket = 'log-archives'
+                        &nbsp;&nbsp;&nbsp;bucket = 'log-archives'<br>
+                        &nbsp;&nbsp;&nbsp;key_prefix = 'date=%F'<br>
                     </p>
                 </div>
                 <div class="d-none d-lg-block col-5 configuration__callout">
@@ -477,12 +478,11 @@
                             <div class="col-12 col-md-6">
                                 <h1 class="call-to-action__title">Ready to use Vector?</h1>
                                 <h5 class="call-to-action__copy">
-                                    Get started on your own or join our private beta program for exclusive access to new
-                                    features.
+                                    Get started by downloading Vector and following the install instructions.
                                 </h5>
                             </div>
                             <div class="col-12 col-md-5 mt-3 mt-md-0">
-                                <a class="btn btn--cta hover--primary mb-3" href="{{ $.Site.Params.betaURL }}">Join Beta Program</a>
+                                <a class="btn btn--cta hover--primary mb-3" href="{{ $.Site.Params.installURL }}">Install</a>
                                 <a class="btn btn--cta hover--secondary" href="{{ $.Site.Params.downloadURL }}">Download</a>
                             </div>
                         </div>
@@ -535,7 +535,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-7 text-center">
                     <h3 class="mb-1">Get updates delivered straight to your inbox</h3>
-                    <p class="lead">One email per month. All the latest posts. No spam, ever.</p>
+                    <p class="lead">Simple monthly updates. No spam, ever.</p>
                     <form action="{{ $.Site.Params.subscribeActionURL }}" method="post">
                         <input class="form-control philosophy__subscribe mb-3" name="email" placeholder="enter your email address"
                            type="email">
@@ -636,15 +636,14 @@
                     <div class="call-to-action__panel">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-12 col-md-6">
-                                <h1 class="call-to-action__title">Help shape the future of Vector!</h1>
+                                <h1 class="call-to-action__title">Stay In The Know!</h1>
                                 <h5 class="call-to-action__copy">
-                                    Join our beta program for exclusive access to new features and to help prioritize new
-                                    development.
+                                    Join our mailing list to stay current or checkout one of our community resources.
                                 </h5>
                             </div>
                             <div class="col-12 col-md-5 mt-3 mt-md-0">
-                                <a class="btn btn--cta hover--primary mb-3" href="{{ $.Site.Params.betaURL }}">Join Beta Program</a>
-                                <a class="btn btn--cta hover--secondary" href="{{ $.Site.Params.downloadURL }}">Download</a>
+                                <a class="btn btn--cta hover--primary mb-3" href="/mailing_list">Join Our Mailing List</a>
+                                <a class="btn btn--cta hover--secondary" href="/community">Community</a>
                             </div>
                         </div>
 
