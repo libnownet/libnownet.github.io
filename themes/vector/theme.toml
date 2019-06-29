@@ -12,7 +12,7 @@ min_version = "0.41"
 
 [author]
   name = "Ben Johnson"
-  homepage = "http://vectorproject.io"
+  homepage = "http://vector.dev"
 
 # If porting an existing theme
 [original]
