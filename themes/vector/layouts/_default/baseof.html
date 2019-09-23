@@ -46,6 +46,53 @@
         {{- block "header" . }}{{- partial "header.html" . -}}{{- end }}
         {{- block "main" . }}{{- end }}
         {{- partial "footer.html" . -}}
+
+        <!-- Custom Front-End Logic -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //
+                // Latest Release via GitHub API
+                //
+
+                let latestrelease = new Vue({
+                    el: '#hero',
+                    data: {
+                        version: "",
+                        link: "",
+                        recent: false
+                    },
+                    mounted() {
+                        let self = this;
+                        $.ajax({
+                            url: 'https://api.github.com/repos/timberio/vector/releases/latest',
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(json_data) {
+                                self.version = json_data.tag_name;
+                                self.link = json_data.html_url;
+                                let releaseDate = new Date(json_data.published_at);
+                                let pastDate = new Date().setDate((new Date().getDate() - 30));
+                                if(releaseDate > pastDate){
+                                    self.recent = true;
+                                }
+                            },
+                            beforeSend: function(xhr){
+                                xhr.setRequestHeader('Authorization', 'token 61f7937cc01093f4af09046a96fcf708d7e7c65f');
+                            }
+                        });
+                    }
+                });
+
+                //
+                // Mobile
+                //
+
+                $(document).on("click", ".heronav__hamburger", function () {
+                    $(".heronav").toggleClass("open--nav");
+                });
+            });
+        </script>
+
         {{- block "scripts" . }}{{- end }}
     </body>
 </html>
