@@ -2,39 +2,46 @@
 <html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
     {{- partial "head.html" . -}}
     <body{{ with .Layout }} class="{{ . }}"{{ end }}>
-        <!-- Top Bar -->
-        <a class="topbar" href="/mailing_list">
-            Join our mailing list. Simple monthly updates. No spam, ever.
-        </a>
-
-        <section class="hero pt-5 pb-5">
-            <div class="container">
-
-                <div class="row align-items-center">
-                    <!-- Logo-->
-                    <div class="col">
-                        <a href="/"><img alt="Vector by Timber.io" class="hero__logo" src="/images/logo.png"></a>
-                    </div>
-                    <div class="col text-right d-block d-lg-none"><a class="heronav__hamburger pr-2" href="#"><i
-                            class="fas fa-bars"></i></a></div>
-                    <!-- Navigation-->
-                    <div class="col-12 col-lg-9 text-right">
-                        <nav class="heronav text-left text-lg-right">
-                            <a class="heronav__item" href="{{ $.Site.Params.usecasesURL }}">Use Cases</a>
-                            <a class="heronav__item" href="{{ $.Site.Params.docsURL }}">Docs</a>
-                            <a class="heronav__item" href="/community">Community</a>
-                            <a class="heronav__item mr-3" href="{{ $.Site.Params.downloadURL }}">Download</a>
-                            <a class="heronav__item item--github mt-3 mt-lg-0" href="{{ $.Site.Params.repoURL }}"><img alt="View on GitHub"
-                                                                                             src="/images/github-icon.png"> View on
-                                GitHub</a>
-                        </nav>
-
-                    </div>
-                </div>
-
-                {{- block "hero" . }}{{- end }}
+        <div id="hero">
+            <!-- Top Bar -->
+            <div v-cloak>
+                <a class="topbar" v-bind:href="link" v-cloak v-if="recent">
+                    {{ "{{" }} version {{ "}}" }} released! Download now.
+                </a>
+                <a class="topbar" href="/mailing_list" v-else>
+                    Join our mailing list. Simple monthly updates. No spam, ever.
+                </a>
             </div>
-        </section>
+
+            <section class="hero pt-5 pb-5">
+                <div class="container">
+
+                    <div class="row align-items-center">
+                        <!-- Logo-->
+                        <div class="col">
+                            <a href="/"><img alt="Vector by Timber.io" class="hero__logo" src="/images/logo.png"></a>
+                        </div>
+                        <div class="col text-right d-block d-lg-none"><a class="heronav__hamburger pr-2" href="#"><i
+                                class="fas fa-bars"></i></a></div>
+                        <!-- Navigation-->
+                        <div class="col-12 col-lg-9 text-right">
+                            <nav class="heronav text-left text-lg-right">
+                                <a class="heronav__item" href="{{ $.Site.Params.usecasesURL }}">Use Cases</a>
+                                <a class="heronav__item" href="{{ $.Site.Params.docsURL }}">Docs</a>
+                                <a class="heronav__item" href="/community">Community</a>
+                                <a class="heronav__item mr-3" href="{{ $.Site.Params.downloadURL }}">Download</a>
+                                <a class="heronav__item item--github mt-3 mt-lg-0" href="{{ $.Site.Params.repoURL }}"><img alt="View on GitHub"
+                                                                                                 src="/images/github-icon.png"> View on
+                                    GitHub</a>
+                            </nav>
+
+                        </div>
+                    </div>
+
+                    {{- block "hero" . }}{{- end }}
+                </div>
+            </section>
+        </div>
         
         {{- block "header" . }}{{- partial "header.html" . -}}{{- end }}
         {{- block "main" . }}{{- end }}

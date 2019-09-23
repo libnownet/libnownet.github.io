@@ -5,7 +5,7 @@
             <h2 class="hero__tag_line headline pb-2">Vector Makes Observability Data Simple</h2>
             <h5 class="tagline pb-3">Vector is an <a href="{{ $.Site.Params.repoURL }}" target="_blank">open-source</a> utility for collecting, transforming, and routing logs, metrics, and events.</h5>
             <a class="btn btn--primary btn--rounded mb-3 mb-sm-0 mr-0 mr-sm-3" href="{{ $.Site.Params.getStartedURL }}">Get Started</a>
-            <a class="btn btn--outline btn--rounded mb-3 mb-sm-0" href="{{ $.Site.Params.downloadURL }}">Download</a>
+            <a class="btn btn--outline btn--rounded mb-3 mb-sm-0" v-bind:href="link">Download <span v-cloak>{{ "{{" }} version {{ "}}" }}</span></a>
         </div>
     </div>
 
@@ -495,81 +495,33 @@
     </section>
 
     <!-- Roadmap -->
-    <section class="roadmap background--grey pt-5 pb-7">
+    <section class="roadmap background--grey pt-5 pb-7" id="roadmap">
         <div class="container pb-7">
 
             <!-- Section Title-->
             <div class="row">
                 <div class="col">
-                    <h1 class="section__title pb-5">Where We're Headed</h1>
+                    <h1 class="section__title pb-5">Roadmap</h1>
                 </div>
             </div>
 
-            <div class="timeline">
+            <div class="timeline" v-cloak>
                 <div class="timeline__bar"></div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color1">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/2">v0.1 - Logs Support</a></h4>
-                        <div class="pill pill--released mt-1 mb-2">Released</div>
-                        <p class="timeline__copy">Basic log collection and shipping.</p>
+
+                <div class="row timeline__item" v-for="(milestone, index) in milestones">
+                    <div class="col-12 col-sm-6 pt-3 timeline__item__content" v-bind:class="{ 'timeline__item__content--color1': ((100/milestones.length)*(index+1) < 33), 'timeline__item__content--color2': (((100/milestones.length)*(index+1) < 66) && ((100/milestones.length)*(index+1) >= 33)), 'timeline__item__content--color3': ((100/milestones.length)*(index+1) >= 66) }">
+                        <a v-bind:href="milestone.link" target="_blank"><h4 class="timeline__title" style="cursor:pointer !important">{{ "{{" }} milestone.title {{ "}}" }}</h4></a>
+                        <div class="pill mt-1 mb-2" v-if="milestone.status > 0" v-bind:class="{ 'pill--released': (milestone.status == 2), 'pill--beta': (milestone.status == 1) }"><span v-if="milestone.status > 1">Released</span><span v-else>In-Dev</span></div>
+                        <progress v-bind:value="milestone.percentComplete" max="100" class="ml-2" v-if="milestone.status == 1"></progress>
+                        <p class="timeline__copy"><span v-if="milestone.status == 2">{{ "{{" }} milestone.description {{ "}}" }}<br></span><strong v-if="milestone.status < 2">Due by {{ "{{" }} milestone.due {{ "}}" }}</strong></p>
                     </div>
                 </div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color1">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/3">v0.2 - Metrics Support</a></h4>
-                        <div class="pill pill--released mt-1 mb-2">Released</div>
-                        <p class="timeline__copy">Basic metrics support in the context of logs: converting logs to metrics, outputting metrics to popular metrics storages.</p>
-                    </div>
-                </div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color1">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/5">v0.3 - Parsing & Transforming</a></h4>
-                        <div class="pill pill--released mt-1 mb-2">Released</div>
-                        <p class="timeline__copy">LUA runtime, Regex parser, Grok parser, tokenized parser, and more.</p>
-                    </div>
-                </div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color2">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/7">v0.4 - Schemas</a></h4>
-                        <div class="pill pill--beta mt-1 mb-2">In Dev</div>
-                        <p class="timeline__copy">Ability to coerce values and define a schema, guaranteeing consistent normalized types for known fields.</p>
-                    </div>
-                </div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color2">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/6">v0.5 - Stream Consumers</a></h4>
-                        <p class="timeline__copy">Kafka, Kinesis, and SQS consumer sources.</p>
-                    </div>
-                </div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color2">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/8">v0.6 - Columnar Writing</a></h4>
-                        <p class="timeline__copy">CSV/ORC/Parquet, Big Query, ClickHouse, and more.</p>
-                    </div>
-                </div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color3">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/9">v0.7 - CLI</a></h4>
-                        <p class="timeline__copy">List vector instances, view topology, validate config changes, syphon test data, pre-flight testing, observability, and more.</p>
-                    </div>
-                </div>
-                <div class="row timeline__item">
-                    <div class="col-12 col-sm-6 pt-3 timeline__item__content timeline__item__content--color3">
-                        <h4 class="timeline__title"><a href="https://github.com/timberio/vector/milestone/10">v0.8 - Wire Level Tailing</a></h4>
-                        <p class="timeline__copy">Directly connect to vector instances and live tail the stream, compute aggregates, and get real-time millisecond latency.</p>
-                    </div>
-                </div>
+
                 <div class="timeline__majorversion d-none d-sm-block">v1.0</div>
             </div>
 
             <div class="row pt-7 pb-7 d-none d-sm-block">
                 <!-- Spacer for Major Version Number-->
-            </div>
-
-            <div class="row pt-5">
-                <div class="col section__links text-center">
-                    <a href="{{ $.Site.Params.roadmapURL }}">view roadmap</a>
-                </div>
             </div>
 
         </div>
@@ -608,6 +560,101 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+            //
+            // Roadmap Milestones via GitHub API
+            //
+
+            let roadmap = new Vue({
+                el: '#roadmap',
+                data: {
+                    milestones: [
+                        /* Replaced by external JSON when mounted */
+                        {
+                            title: "",
+                            description: "",
+                            link: "",
+                            due: "",
+                            status: 2 /* 0 = pending, 1 = in-dev, 2 = released */,
+                            percentComplete: 0
+                        }
+                    ]
+                },
+                mounted() {
+                    let self = this;
+                    $.ajax({
+                        url: 'https://api.github.com/repos/timberio/vector/milestones?state=all',
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(json_data) {
+                            self.milestones = [];
+                            json_data.forEach(function(element, index){
+                                if(element.due_on != null) {
+                                    let status = 0;
+                                    let percentComplete = 0;
+                                    if(element.state == "closed"){
+                                        // Closed milestone
+                                        status = 2;
+                                    }else{
+                                        if(element.open_issues == 0 && element.closed_issues > 0){
+                                            // Open milestone with no issues remaining
+                                            status = 2;
+                                        }else if(element.closed_issues > 0){
+                                            // In development milestone
+                                            status = 1;
+                                            percentComplete = Math.round((100/(element.closed_issues + element.open_issues)*element.closed_issues));
+                                        }
+                                    }
+                                    let due_date = new Intl.DateTimeFormat('en-US').format(new Date(element.due_on));
+                                    self.milestones.push({
+                                        title: element.title,
+                                        description: element.description,
+                                        link: element.html_url,
+                                        due: due_date,
+                                        status: status,
+                                        percentComplete: percentComplete
+                                    });
+                                }
+                            });
+                        },
+                        beforeSend: function(xhr){
+                            xhr.setRequestHeader('Authorization', 'token 61f7937cc01093f4af09046a96fcf708d7e7c65f');
+                        }
+                    });
+                }
+            });
+
+            //
+            // Latest Release via GitHub API
+            //
+
+            let latestrelease = new Vue({
+                el: '#hero',
+                data: {
+                    version: "",
+                    link: "",
+                    recent: false
+                },
+                mounted() {
+                    let self = this;
+                    $.ajax({
+                        url: 'https://api.github.com/repos/timberio/vector/releases/latest',
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(json_data) {
+                            self.version = json_data.tag_name;
+                            self.link = json_data.html_url;
+                            let releaseDate = new Date(json_data.published_at);
+                            let pastDate = new Date().setDate((new Date().getDate() - 30));
+                            if(releaseDate > pastDate){
+                                self.recent = true;
+                            }
+                        },
+                        beforeSend: function(xhr){
+                            xhr.setRequestHeader('Authorization', 'token 61f7937cc01093f4af09046a96fcf708d7e7c65f');
+                        }
+                    });
+                }
+            });
 
             //
             // Performance tests
