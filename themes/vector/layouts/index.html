@@ -511,7 +511,7 @@
                 <div class="row timeline__item" v-for="(milestone, index) in milestones">
                     <div class="col-12 col-sm-6 pt-3 timeline__item__content" v-bind:class="{ 'timeline__item__content--color1': ((100/milestones.length)*(index+1) < 33), 'timeline__item__content--color2': (((100/milestones.length)*(index+1) < 66) && ((100/milestones.length)*(index+1) >= 33)), 'timeline__item__content--color3': ((100/milestones.length)*(index+1) >= 66) }">
                         <a v-bind:href="milestone.link" target="_blank"><h4 class="timeline__title" style="cursor:pointer !important">{{ "{{" }} milestone.title {{ "}}" }}</h4></a>
-                        <div class="pill mt-1 mb-2" v-if="milestone.status > 0" v-bind:class="{ 'pill--released': (milestone.status == 2), 'pill--beta': (milestone.status == 1) }"><span v-if="milestone.status > 1">Released</span><span v-else>In-Dev</span></div>
+                        <div class="pill mt-1 mb-2" v-bind:class="{ 'pill--released': (milestone.status == 2), 'pill--beta': (milestone.status == 1), 'pill--pending': (milestone.status == 0) }"><span v-if="milestone.status == 2">Released</span><span v-else-if="milestone.status == 1">In-Dev</span><span v-else>Pending</span></div>
                         <progress v-bind:value="milestone.percentComplete" max="100" class="ml-2" v-if="milestone.status == 1"></progress>
                         <p class="timeline__copy"><span v-if="milestone.status == 2">{{ "{{" }} milestone.description {{ "}}" }}<br></span><strong v-if="milestone.status < 2">Due by {{ "{{" }} milestone.due {{ "}}" }}</strong></p>
                     </div>
