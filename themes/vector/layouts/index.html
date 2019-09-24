@@ -511,9 +511,9 @@
                 <div class="row timeline__item" v-for="(milestone, index) in milestones">
                     <div class="col-12 col-sm-6 pt-3 timeline__item__content" v-bind:class="{ 'timeline__item__content--color1': ((100/milestones.length)*(index+1) < 33), 'timeline__item__content--color2': (((100/milestones.length)*(index+1) < 66) && ((100/milestones.length)*(index+1) >= 33)), 'timeline__item__content--color3': ((100/milestones.length)*(index+1) >= 66) }">
                         <a v-bind:href="milestone.link" target="_blank"><h4 class="timeline__title" style="cursor:pointer !important">{{ "{{" }} milestone.title {{ "}}" }}</h4></a>
-                        <div class="pill mt-1 mb-2" v-bind:class="{ 'pill--released': (milestone.status == 2), 'pill--beta': (milestone.status == 1), 'pill--pending': (milestone.status == 0) }"><span v-if="milestone.status == 2">Released</span><span v-else-if="milestone.status == 1">In-Dev</span><span v-else>Pending</span></div>
+                        <div class="pill mt-1 mb-2" v-bind:class="{ 'pill--released': (milestone.status == 2), 'pill--beta': (milestone.status == 1), 'pill--pending': (milestone.status == 0) }"><span v-if="milestone.status == 2">Released</span><span v-else-if="milestone.status == 1">In-Progress</span><span v-else>Pending</span></div>
                         <progress v-bind:value="milestone.percentComplete" max="100" class="ml-2" v-if="milestone.status == 1"></progress>
-                        <p class="timeline__copy"><span v-if="milestone.status == 2">{{ "{{" }} milestone.description {{ "}}" }}<br></span><strong v-if="milestone.status < 2">ETA → {{ "{{" }} milestone.due {{ "}}" }}</strong></p>
+                        <p class="timeline__copy"><strong v-if="milestone.status < 2">ETA → {{ "{{" }} milestone.due {{ "}}" }}</strong></p>
                     </div>
                 </div>
 
@@ -574,7 +574,7 @@
                             description: "",
                             link: "",
                             due: "",
-                            status: 2 /* 0 = pending, 1 = in-dev, 2 = released */,
+                            status: 2 /* 0 = pending, 1 = in-progress, 2 = released */,
                             percentComplete: 0
                         }
                     ]
@@ -590,7 +590,7 @@
                             json_data.forEach(function(element, index){
                                 if(element.due_on != null) {
                                     let status = 0;
-                                    let percentComplete = 0;
+                                    let percentComplete = Math.round((100/(element.closed_issues + element.open_issues)*element.closed_issues));
                                     if(element.state == "closed"){
                                         // Closed milestone
                                         status = 2;
@@ -601,7 +601,6 @@
                                         }else if(element.closed_issues > 0){
                                             // In development milestone
                                             status = 1;
-                                            percentComplete = Math.round((100/(element.closed_issues + element.open_issues)*element.closed_issues));
                                         }
                                     }
                                     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
