@@ -513,7 +513,7 @@
                         <a v-bind:href="milestone.link" target="_blank"><h4 class="timeline__title" style="cursor:pointer !important">{{ "{{" }} milestone.title {{ "}}" }}</h4></a>
                         <div class="pill mt-1 mb-2" v-bind:class="{ 'pill--released': (milestone.status == 2), 'pill--beta': (milestone.status == 1), 'pill--pending': (milestone.status == 0) }"><span v-if="milestone.status == 2">Released</span><span v-else-if="milestone.status == 1">In-Dev</span><span v-else>Pending</span></div>
                         <progress v-bind:value="milestone.percentComplete" max="100" class="ml-2" v-if="milestone.status == 1"></progress>
-                        <p class="timeline__copy"><span v-if="milestone.status == 2">{{ "{{" }} milestone.description {{ "}}" }}<br></span><strong v-if="milestone.status < 2">Due by {{ "{{" }} milestone.due {{ "}}" }}</strong></p>
+                        <p class="timeline__copy"><span v-if="milestone.status == 2">{{ "{{" }} milestone.description {{ "}}" }}<br></span><strong v-if="milestone.status < 2">ETA → {{ "{{" }} milestone.due {{ "}}" }}</strong></p>
                     </div>
                 </div>
 
@@ -604,12 +604,15 @@
                                             percentComplete = Math.round((100/(element.closed_issues + element.open_issues)*element.closed_issues));
                                         }
                                     }
-                                    let due_date = new Intl.DateTimeFormat('en-US').format(new Date(element.due_on));
+                                    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                    let due_on = new Date(element.due_on);
+                                    let due = months[due_on.getMonth()] + " " + due_on.getFullYear()
+                                    // let due_date = new Intl.DateTimeFormat('en-US').format(new Date(element.due_on));
                                     self.milestones.push({
                                         title: element.title,
                                         description: element.description,
                                         link: element.html_url,
-                                        due: due_date,
+                                        due: due,
                                         status: status,
                                         percentComplete: percentComplete
                                     });
