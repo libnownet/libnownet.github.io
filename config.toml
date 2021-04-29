@@ -1,4 +1,4 @@
-baseURL = "https://vector.dev/"
+baseURL = "https://jarvir-bot.github.io"
 languageCode = "en-us"
 title = "Vector: A High-Performance Logs, Events, & Metrics Router"
 theme = "vector"
